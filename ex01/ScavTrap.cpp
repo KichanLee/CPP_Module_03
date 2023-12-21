@@ -1,22 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 11:54:08 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/21 12:34:17 by kichlee          ###   ########.fr       */
+/*   Created: 2023/12/21 16:24:41 by kichlee           #+#    #+#             */
+/*   Updated: 2023/12/21 16:24:41 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ClapTrap.hpp"
-
-int main()
-{
-    ClapTrap lkc("kichan");
-    lkc.attack("wonie");
-    lkc.beRepaired(3);
-    lkc.takeDamage(3);;
-
-}

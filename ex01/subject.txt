@@ -1,0 +1,42 @@
+Because you can never have enough ClapTraps, you will now create a derived robot.
+It will be named ScavTrap and will inherit the constructors and destructor from ClapTrap. 
+However, its constructors, destructor and attack() will print different messages.
+After all, ClapTraps are aware of their individuality.
+Note that proper construction/destruction chaining must be shown in your tests.
+When a ScavTrap is created, the program starts by building a ClapTrap. Destruction is
+in reverse order. Why?
+ScavTrap will use the attributes of ClapTrap (update ClapTrap in consequence) and
+must initialize them to:
+• Name, which is passed as parameter to a constructor
+• Hit points (100), represent the health of the ClapTrap
+• Energy points (50)
+• Attack damage (20)
+ScavTrap will also have its own special capacity:
+void guardGate();
+This member function will display a message informing that ScavTrap is now in Gate
+keeper mode.
+Don’t forget to add more tests to your program
+
+연습문제 01: Serena, my love!
+
+제출 폴더: ex01/
+제출 파일: 이전 연습에서의 파일들 + ScavTrap.{h, hpp}, ScavTrap.cpp
+금지된 함수: 없음
+
+ClapTraps를 많이 가질수록 좋기 때문에, 이제 파생된 로봇을 만들 것입니다.
+ ScavTrap이라고 불리며 ClapTrap의 생성자와 소멸자를 상속받지만, 생성자, 소멸자 및 attack() 메서드는 다른 메시지를 출력합니다.
+  결국 ClapTraps는 그들의 개별성을 인식하고 있습니다.
+
+테스트에서는 적절한 생성/소멸 체이닝이 보여져야 합니다. ScavTrap이 생성될 때, 프로그램은 ClapTrap을 먼저 만듭니다. 
+소멸은 반대 순서로 이루어집니다. 왜 그럴까요?`
+
+ScavTrap은 ClapTrap의 속성을 사용할 것이며 (따라서 ClapTrap을 업데이트해야 함) 다음과 같이 초기화해야 합니다:
+
+Name: 생성자에 전달되는 이름.
+Hit points (100): ClapTrap의 건강을 나타냅니다.
+Energy points (50).
+Attack damage (20).
+ScavTrap은 또한 자신만의 특별한 능력을 가질 것입니다:
+
+void guardGate();: ScavTrap이 이제 게이트 키퍼 모드에 있다는 것을 알리는 메시지를 표시하는 멤버 함수입니다.
+프로그램에 더 많은 테스트를 추가하는 것을 잊지 마세요.
