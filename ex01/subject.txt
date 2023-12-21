@@ -24,13 +24,16 @@ Don’t forget to add more tests to your program
 금지된 함수: 없음
 
 ClapTraps를 많이 가질수록 좋기 때문에, 이제 파생된 로봇을 만들 것입니다.
- ScavTrap이라고 불리며 ClapTrap의 생성자와 소멸자를 상속받지만, 생성자, 소멸자 및 attack() 메서드는 다른 메시지를 출력합니다.
+ ScavTrap이라고 불리며 ClapTrap의 생성자와 소멸자를 상속받지만,
+ 생성자, 소멸자 및 attack() 메서드는 다른 메시지를 출력합니다.
   결국 ClapTraps는 그들의 개별성을 인식하고 있습니다.
 
-테스트에서는 적절한 생성/소멸 체이닝이 보여져야 합니다. ScavTrap이 생성될 때, 프로그램은 ClapTrap을 먼저 만듭니다. 
+테스트에서는 적절한 생성/소멸 체이닝이 보여져야 합니다. ScavTrap이 생성될 때, 
+프로그램은 ClapTrap을 먼저 만듭니다. 
 소멸은 반대 순서로 이루어집니다. 왜 그럴까요?`
 
-ScavTrap은 ClapTrap의 속성을 사용할 것이며 (따라서 ClapTrap을 업데이트해야 함) 다음과 같이 초기화해야 합니다:
+ScavTrap은 ClapTrap의 속성을 사용할 것이며 
+(따라서 ClapTrap을 업데이트해야 함) 다음과 같이 초기화해야 합니다:
 
 Name: 생성자에 전달되는 이름.
 Hit points (100): ClapTrap의 건강을 나타냅니다.
