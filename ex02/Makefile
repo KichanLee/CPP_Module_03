@@ -6,7 +6,7 @@
 #    By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 13:53:49 by kichlee           #+#    #+#              #
-#    Updated: 2023/12/23 15:46:12 by kichlee          ###   ########.fr        #
+#    Updated: 2023/12/23 15:46:35 by kichlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 SRCS		=	ClapTrap.cpp \
-				ScavTrap.cpp \
+				FragTrap.cpp \
  				main.cpp
 OBJS		=	${SRCS:.c=.o}
 
