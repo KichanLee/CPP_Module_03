@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 14:11:28 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/23 15:43:53 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/26 16:21:20 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
  private:
  public:
   FragTrap(std::string Name);
