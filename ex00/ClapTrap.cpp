@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 10:54:52 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/23 13:47:33 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/27 16:22:26 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,20 @@ ClapTrap::ClapTrap(std::string input_name)
 }
 
 ClapTrap::~ClapTrap() { std::cout << "ClapTrap Destructor Call!" << std::endl; }
+
+ClapTrap::ClapTrap(const ClapTrap& rhs) {
+  if (this != &rhs) *this = rhs;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
+  if (this != &rhs) {
+    this->Name = rhs.Name;
+    this->HitPoints = rhs.HitPoints;
+    this->EnergyPoints = rhs.EnergyPoints;
+    this->AttackDamage = rhs.AttackDamage;
+  }
+  return (*this);
+}
 
 bool ClapTrap::check_points() { return (this->EnergyPoints > 0); }
 
