@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:20:56 by kichan            #+#    #+#             */
-/*   Updated: 2023/12/26 21:20:56 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/29 23:50:38 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ class DiamondTrap : public FragTrap, public ScavTrap {
   std::string name;
 
  public:
-  DiamondTrap(std::string name);
+  DiamondTrap();
   ~DiamondTrap();
+  DiamondTrap(const DiamondTrap& rhs);
+  DiamondTrap& operator=(const DiamondTrap& rhs);
+  DiamondTrap(std::string name);
 
   void attack(const std::string& target);
   void whoAmI();

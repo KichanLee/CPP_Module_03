@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:24:38 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/26 20:35:52 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 00:09:16 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap {
- private:
  public:
-  ScavTrap(std::string Name);
+  ScavTrap();
   ~ScavTrap();
+  ScavTrap(ScavTrap& rhs);
+  ScavTrap& operator=(const ScavTrap& rhs);
+  ScavTrap(std::string Name);
   void attack(const std::string& target);
   void takeDamage(unsigned int amount);
   void beRepaired(unsigned int amount);
   bool check_points();
+  bool check_Name();
   void guardGate();
 };
 

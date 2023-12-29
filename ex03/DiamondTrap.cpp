@@ -6,11 +6,36 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:20:52 by kichan            #+#    #+#             */
-/*   Updated: 2023/12/26 21:32:50 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 00:08:59 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+
+DiamondTrap::DiamondTrap() {
+  std::cout << "DiamondTrap Constructor call!" << std::endl;
+  this->HitPoints = FragTrap::HitPoints;
+  this->EnergyPoints = ScavTrap::EnergyPoints;
+  this->AttackDamage = FragTrap::AttackDamage;
+}
+DiamondTrap::~DiamondTrap() {
+  std::cout << "DiamondTrap Destructor call!" << std::endl;
+}
+DiamondTrap::DiamondTrap(const DiamondTrap& rhs) {
+  std::cout << "DiamondTrap copy constructor call!" << std::endl;
+  *this = rhs;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& ref) {
+  std::cout << "DiamondTrap Copy assignment operator called" << std::endl;
+  if (this != &ref) {
+    ClapTrap::operator=(ref);
+    ScavTrap::operator=(ref);
+    FragTrap::operator=(ref);
+    this->name = ref.name;
+  }
+  return *this;
+}
 
 DiamondTrap::DiamondTrap(std::string name)
     : ClapTrap(name + "_clap_name"),
@@ -20,11 +45,7 @@ DiamondTrap::DiamondTrap(std::string name)
   this->HitPoints = FragTrap::HitPoints;
   this->EnergyPoints = ScavTrap::EnergyPoints;
   this->AttackDamage = FragTrap::AttackDamage;
-  std::cout << "DiamondTrap " << this->name << " is created." << std::endl;
-}
-
-DiamondTrap::~DiamondTrap() {
-  std::cout << "DiamondTrap " << this->name << " is destroyed." << std::endl;
+  std::cout << "DiamondTrap Constructor call!" << std::endl;
 }
 
 void DiamondTrap::attack(const std::string& target) {
