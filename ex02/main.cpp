@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:45:45 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/23 13:50:34 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/29 23:47:04 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-  ScavTrap st("lkc");
+  FragTrap st;
 
   st.attack("someone");
-  st.guardGate();
+  st.highFiveGuys();
 }

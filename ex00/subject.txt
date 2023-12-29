@@ -5,7 +5,7 @@ Name: 생성자에 전달되는 이름.
 Hit points (10): ClapTrap의 건강을 나타냅니다.
 Energy points (10).
 Attack damage (0).
-ClapTrap이 더 현실적으로 보이도록 다음과 같은 공개 멤버 함수들을 추가합니다:
+ 현실적으로 보이도록 다음과 같은 공개 멤버 함수들을 추가합니다:
 
 void attack(const std::string& target): ClapTrap이 공격할 때, 
 대상이 <attack damage>만큼의 히트 포인트를 잃게 합니다.

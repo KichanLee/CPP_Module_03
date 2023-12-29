@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+         #
+#    By: kichan <kichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 13:53:49 by kichlee           #+#    #+#              #
-#    Updated: 2023/12/21 12:00:03 by kichlee          ###   ########.fr        #
+#    Updated: 2023/12/29 22:40:16 by kichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	./a.out
+NAME		=	./ClapTrap
 CXX			=	c++ 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
