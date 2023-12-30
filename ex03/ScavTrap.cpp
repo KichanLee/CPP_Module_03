@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:24:41 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/30 00:08:44 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 13:42:19 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::ScavTrap(ScavTrap& rhs) {
   std::cout << "ScavTrap Copy Constructor Call!\n";
   *this = rhs;
 }
-ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
+ScavTrap& ScavTrap::operator=(ScavTrap& rhs) {
   std::cout << "ScavTrap Copy assignent operator called\n";
 
   if (this != &rhs) {
@@ -50,7 +50,7 @@ void ScavTrap::guardGate() {
 }
 bool ScavTrap::check_Name() { return (this->Name.empty()); }
 bool ScavTrap::check_points() {
-  return (this->EnergyPoints > 0 && this->EnergyPoints > 0);
+  return (this->EnergyPoints > 0 && this->HitPoints > 0);
 }
 
 void ScavTrap::attack(const std::string& target) {
@@ -67,8 +67,12 @@ void ScavTrap::attack(const std::string& target) {
 
 void ScavTrap::takeDamage(unsigned int amount) {
   if (check_Name()) return;
-  std::cout << "take damaged" << amount << std::endl;
-  this->EnergyPoints -= amount;
+  if (this->HitPoints > 0) {
+    std::cout << "take damaged" << amount << std::endl;
+    this->HitPoints -= amount;
+  } else {
+    std::cout << "No hit points" << std::endl;
+  }
 }
 
 void ScavTrap::beRepaired(unsigned int amount) {

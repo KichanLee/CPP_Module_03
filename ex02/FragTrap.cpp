@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:51 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/29 23:43:59 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 13:40:05 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void FragTrap::highFiveGuys() {
 }
 
 bool FragTrap::check_points() {
-  return (this->EnergyPoints > 0 && this->EnergyPoints > 0);
+  return (this->EnergyPoints > 0 && this->HitPoints > 0);
 }
 
 void FragTrap::attack(const std::string& target) {
@@ -69,8 +69,12 @@ bool FragTrap::check_Name() { return (this->Name.empty()); }
 
 void FragTrap::takeDamage(unsigned int amount) {
   if (check_Name()) return;
-  std::cout << "take damaged : " << amount << std::endl;
-  this->EnergyPoints -= amount;
+  if (this->HitPoints > 0) {
+    std::cout << "take damaged : " << amount << std::endl;
+    this->HitPoints -= amount;
+  } else {
+    std::cout << "No hit points" << std::endl;
+  }
 }
 
 void FragTrap::beRepaired(unsigned int amount) {
