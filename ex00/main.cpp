@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:54:08 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/29 23:06:27 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 12:50:36 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main() {
-  ClapTrap aa;
+  ClapTrap lkc("kichan");
 
-  aa.attack("zzz");
-  //   ClapTrap lkc("kichan");
-  //   lkc.attack("wonie");
-  //   lkc.beRepaired(2147483617);
-
-  //   lkc.takeDamage(10);
-  //   lkc.takeDamage(10);
-  //   lkc.takeDamage(10);
+  lkc.attack("wonie");
+  lkc.beRepaired(1);
+  lkc.takeDamage(10);
+  lkc.takeDamage(10);
+  lkc.takeDamage(10);
+  lkc.takeDamage(10);
+  lkc.beRepaired(10);
 }

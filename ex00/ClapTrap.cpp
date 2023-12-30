@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 10:54:52 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/29 23:08:22 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 13:40:45 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ClapTrap::ClapTrap(std::string input_name)
 }
 
 bool ClapTrap::check_points() {
-  return (this->EnergyPoints > 0 && this->EnergyPoints > 0);
+  return (this->EnergyPoints > 0 && this->HitPoints > 0);
 }
 bool ClapTrap::check_Name() { return (this->Name.empty()); }
 
@@ -58,8 +58,12 @@ void ClapTrap::attack(const std::string& target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
   if (check_Name()) return;
-  std::cout << "take damaged : " << amount << std::endl;
-  this->EnergyPoints -= amount;
+  if (this->HitPoints > 0) {
+    std::cout << "take damaged : " << amount << std::endl;
+    this->HitPoints -= amount;
+  } else {
+    std::cout << "No hit points" << std::endl;
+  }
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
