@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:24:41 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/30 13:40:27 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/30 13:50:56 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ ScavTrap::ScavTrap(std::string Name) {
 
 ScavTrap::~ScavTrap() { std::cout << "ScavTrap destructor Call!\n"; }
 
-ScavTrap::ScavTrap(ScavTrap& rhs) {
+ScavTrap::ScavTrap(const ScavTrap& rhs) : ClapTrap(rhs) {
   std::cout << "ScavTrap Copy Constructor Call!\n";
   *this = rhs;
 }
-ScavTrap& ScavTrap::operator=(ScavTrap& rhs) {
+ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
   std::cout << "ScavTrap Copy assignent operator called\n";
 
   if (this != &rhs) {
+    ClapTrap::operator=(rhs);
     this->Name = rhs.Name;
     this->HitPoints = rhs.HitPoints;
     this->EnergyPoints = rhs.EnergyPoints;

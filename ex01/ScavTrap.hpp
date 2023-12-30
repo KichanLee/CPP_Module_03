@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:24:38 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/29 23:27:25 by kichan           ###   ########.fr       */
+/*   Updated: 2023/12/30 13:49:27 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class ScavTrap : public ClapTrap {
  public:
   ScavTrap();
   ~ScavTrap();
-  ScavTrap(ScavTrap& rhs);
-  ScavTrap& operator=(ScavTrap& rhs);
+  ScavTrap(const ScavTrap& rhs);
+  ScavTrap& operator=(const ScavTrap& rhs);
   ScavTrap(std::string Name);
   void attack(const std::string& target);
   void takeDamage(unsigned int amount);
