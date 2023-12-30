@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:20:56 by kichan            #+#    #+#             */
-/*   Updated: 2023/12/30 13:42:22 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/30 14:19:24 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class DiamondTrap : public FragTrap, public ScavTrap {
  private:
-  std::string name;
+  std::string Name;
 
  public:
   DiamondTrap();

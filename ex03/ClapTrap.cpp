@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 10:54:52 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/30 13:40:11 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:13:04 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 }
 ClapTrap::ClapTrap(std::string input_name)
     : Name(input_name), HitPoints(10), EnergyPoints(10), AttackDamage(0) {
-  std::cout << "ClapTrap Constructor Call!" << std::endl;
+  std::cout << "claptrap" << ClapTrap::Name << std::endl;
 }
 
 bool ClapTrap::check_points() {

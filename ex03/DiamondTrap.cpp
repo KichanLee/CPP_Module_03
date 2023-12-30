@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 21:20:52 by kichan            #+#    #+#             */
-/*   Updated: 2023/12/30 14:05:31 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:25:58 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ DiamondTrap::DiamondTrap() {
 DiamondTrap::~DiamondTrap() {
   std::cout << "DiamondTrap Destructor call!" << std::endl;
 }
-DiamondTrap::DiamondTrap(const DiamondTrap& rhs) {
+DiamondTrap::DiamondTrap(const DiamondTrap& rhs)
+    : ClapTrap(rhs), FragTrap(rhs), ScavTrap(rhs) {
   std::cout << "DiamondTrap copy constructor call!" << std::endl;
   *this = rhs;
 }
@@ -29,23 +30,20 @@ DiamondTrap::DiamondTrap(const DiamondTrap& rhs) {
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& ref) {
   std::cout << "DiamondTrap Copy assignment operator called" << std::endl;
   if (this != &ref) {
-    ClapTrap::operator=(ref);
     ScavTrap::operator=(ref);
     FragTrap::operator=(ref);
-    this->name = ref.name;
+    this->Name = ref.Name;
   }
   return *this;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
-    : ClapTrap(name + "_clap_name"),
-      FragTrap(name),
-      ScavTrap(name),
-      name(name) {
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
   this->HitPoints = FragTrap::HitPoints;
   this->EnergyPoints = ScavTrap::EnergyPoints;
   this->AttackDamage = FragTrap::AttackDamage;
+  this->Name = name;
   std::cout << "DiamondTrap Constructor call!" << std::endl;
+  std::cout << "ClapTrap::Name : " << ClapTrap::Name << std::endl;
 }
 
 void DiamondTrap::attack(const std::string& target) {
@@ -53,6 +51,6 @@ void DiamondTrap::attack(const std::string& target) {
 }
 
 void DiamondTrap::whoAmI() {
-  std::cout << "I am " << this->name << " and ClapTrap name is "
+  std::cout << "I am " << this->Name << " and ClapTrap name is "
             << ClapTrap::Name << std::endl;
 }

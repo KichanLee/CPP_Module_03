@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:51 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/30 13:52:43 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:29:42 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ void FragTrap::attack(const std::string& target) {
   }
 }
 bool FragTrap::check_Name() { return (this->Name.empty()); }
+
+void FragTrap::change_name() {
+  this->Name = "kimdonghyun";
+  std::cout << "FragTrap name" << FragTrap::Name << std::endl;
+  std::cout << "claptrap name" << ClapTrap::Name << std::endl;
+}
 
 void FragTrap::takeDamage(unsigned int amount) {
   if (check_Name()) return;
