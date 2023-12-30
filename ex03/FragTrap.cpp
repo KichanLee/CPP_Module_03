@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:51 by kichlee           #+#    #+#             */
-/*   Updated: 2023/12/30 13:40:05 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/12/30 14:05:24 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ FragTrap::FragTrap() {
 
 FragTrap::~FragTrap() { std::cout << "FragTrap destructor Call!\n"; }
 
-FragTrap::FragTrap(const FragTrap& rhs) {
+FragTrap::FragTrap(const FragTrap& rhs) : ClapTrap(rhs) {
   std::cout << "FragTrap Copy Constructor Call!\n";
   *this = rhs;
 }
@@ -29,6 +29,7 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs) {
   std::cout << "FragTrap Copy assignent operator called\n";
 
   if (this != &rhs) {
+    ClapTrap::operator=(rhs);
     this->Name = rhs.Name;
     this->HitPoints = rhs.HitPoints;
     this->EnergyPoints = rhs.EnergyPoints;
